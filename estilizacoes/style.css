@@ -13,7 +13,7 @@
 /*grazi: adicionei img de fundo e fixei background*/
 body{
     font-family: Arial, sans-serif; /* Fonte padrão */
-    background-image: url("../img/Background_IA.png");
+    background-image: url("../img/fundo_ia.png");
     color:white;    /* Cor do texto */
     background-attachment: fixed;   
 }
