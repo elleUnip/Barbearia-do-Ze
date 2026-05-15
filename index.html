@@ -14,7 +14,22 @@
 </head>
 
 <body>
-  
+
+    <input type="checkbox" id="toggle-menu">
+
+    <div class="sidebar">
+      <label for="toggle-menu" class="btn-fechar">✕</label>
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a class="ativo" href="">Início</a></li>
+            <li><a href="agendar.html">Agendar</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="login.html"><i class="bi bi-person-circle"></i> Entrar</a></li> <!--simulando que a pessoa nao entrou-->
+        </ul>
+    </nav>
+    </div>
+
 <header class="header">
 
     <div class="container-logo">
@@ -22,13 +37,17 @@
         <h1>Barbearia do Zé</h1>
     </div>
 
+    <label for="toggle-menu" class="hamburguer">
+        <i class="bi bi-list"></i>
+    </label>
+
     <nav class="menu">
         <ul>
             <li><a class="ativo" href="">Início</a></li> 
             <li><a href="agendar.html">Agendar</a></li>
             <li><a href="servicos.html">Serviços</a></li>
             <li><a href="contato.html">Contato</a></li>
-            <li><a href="login.html">Entrar</a></li>
+            <li><a href="login.html"><i class="bi bi-person-circle"></i> Entrar</a></li> <!--simulando que a pessoa nao entrou-->
         </ul>
     </nav>
 </header>

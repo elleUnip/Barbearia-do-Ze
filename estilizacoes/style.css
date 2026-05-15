@@ -1,4 +1,4 @@
-/* PARTE DO GUILHERME */
+/* PARTE GUILHERME */
 
 /* ==========================================
    CONFIGURAÇÕES GERAIS (RESET)
@@ -10,26 +10,111 @@
     box-sizing:border-box; /* Mantém o tamanho correto dos elementos */
 }
 
-/*grazi: adicionei img de fundo e fixei background*/
+
 body{
     font-family: Arial, sans-serif; /* Fonte padrão */
-    background-image: url("../img/fundo_ia.png");
+    background: linear-gradient(135deg, #080808 0%, #141414 50%, #080808 100%);
     color:white;    /* Cor do texto */
     background-attachment: fixed;   
 }
 
+/*SIDEBAR MOBILE*/
+#toggle-menu {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    border-left: 2px solid #f39c12;
+    z-index: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 40px;
+    transition: right 0.35s ease;
+}
+
+#toggle-menu:checked ~ .sidebar {
+    right: 0;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-fechar:hover {
+    color: #f39c12;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 11px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.ativo {
+    background-color: #f39c12;
+    color: black;
+}
+
+.hamburguer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.hamburguer:hover {
+    color: #f39c12;
+}
+
+.menu{
+    display: none;
+}
+
 /* ==========================================
    CABEÇALHO (HEADER)   
-   ========================================== *
+   ========================================== */
 
-/* grazi: mudei o header pra ficar igual aos demais */
 .header{
     width: 100%;
     padding: 20px 15px;
     background-color: black;
     border-bottom: 2px solid #f39c12;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
 }
@@ -90,10 +175,9 @@ body{
     max-width:1100px;              /* Largura máxima */
     margin:0 auto;                 /* Centraliza */
     padding:60px 20px;
-    color: white;   /*grazi: adicionei a cor do titulo*/
+    color: white; 
 }
 
-/*grazi:adicionei cor pro titulo e fonte*/
 h2{
     margin-bottom:25px;
     border-left:4px solid #f39c12; /* Barra lateral */
@@ -106,7 +190,6 @@ h2{
    CARDS
    ========================================== */
 
-/*grazi: mudei cor do backgound, border-radius e adicionei cor ao titulo*/
 .card, .contact-card{
     background:rgba(0,0,0,0.75)!important;           /* Fundo do card */
     border:1px solid #333;         /* Borda */
@@ -131,7 +214,6 @@ h2{
    SERVIÇOS
    ========================================== */
 
-/*grazi: adicionei cor ao "titulo"*/
 .service{
     display:flex;
     justify-content:space-between; /* Nome esquerda / preço direita */
@@ -176,8 +258,7 @@ h2{
 /* ==========================================
    TÍTULO ADICIONAIS
    ========================================== */
-
-/*grazi: add a fonte e removi "color"*/
+ 
 .titulo-adicionais{
     text-align:center;
     font-family: Rye, serif; 
@@ -208,7 +289,7 @@ h2{
     padding:12px;
     margin-bottom:10px;
     border-radius:8px;
-    color: #ccc; /*grazi: add essa cor no nome do dia*/
+    color: #ccc;
 }
 
 .hour-box strong{
@@ -227,14 +308,14 @@ h2{
 
 .channel-box{
     display:flex;
-    flex-direction: column; /*grazi: adicionei, pq antes tava quebrando no mobile*/
+    flex-direction: column;
     gap:20px;
     background:#111;
     border:1px solid #2d2d2d;
     padding:20px;
     border-radius:12px;
     margin-bottom:20px;
-    color: white; /*grazi: add essa cor nos titulos*/
+    color: white;
 }
 
 .icon-box{
@@ -282,7 +363,7 @@ h2{
     display:flex;
     align-items:center;
     justify-content:center;
-    background: #25d366; /*grazi: mudei pra cor do whats*/
+    background: #25d366;
     border-radius:10px;
     font-size:36px;
 }
@@ -312,7 +393,6 @@ h2{
    MAPA
    ========================================== */
 
-/*grazi:mudei border-radius*/
 .map-section{
     background:#161616;
     border:1px solid #333;
@@ -340,6 +420,7 @@ h2{
     overflow:hidden;
     border:1px solid #222;
     margin-bottom:30px;
+
 }
 
 .contact-title{
@@ -353,7 +434,7 @@ h2{
 .contact-text{
     flex:1;
     padding:20px;
-    color: rgba(245, 245, 245, 0.894); /*grazi: mudei a cor*/
+    color: rgba(245, 245, 245, 0.894); 
     background:#111;
     font-weight: 500;
 }
@@ -362,12 +443,11 @@ h2{
    RODAPÉ (FOOTER)
    ========================================== */
 
-/*grazi: mudei pra deixar pradonizado*/
 footer{
     width: 100%;
     margin-top: 60px;
     padding: 35px 20px;
-    background: rgba(0, 0, 0, 0.831);
+    background-color: rgba(0, 0, 0, 0.127);
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -377,7 +457,6 @@ footer{
    RESPONSIVIDADE
    ========================================== */
 
- /*grazi: troquei o "max" por "min"; add ".menu ul"; add ".container-logo h1"*/
 @media(min-width:768px){    
 
    .header{ 
@@ -387,6 +466,13 @@ footer{
 
     .menu ul{   
         flex-direction: row;
+    }
+
+    .menu li a{
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
     .container-logo h1{    
@@ -404,6 +490,14 @@ footer{
 
     .channel-box{
         flex-direction:row;
+    }
+    
+    .hamburguer { display: none; }
+
+    .sidebar    { display: none !important; }
+
+    .menu{
+        display: block;
     }
 }
 

@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url("../img/fundo_ia.png");
+    background: linear-gradient(135deg, #080808 0%, #141414 50%, #080808 100%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -16,13 +16,100 @@ body{
     overflow-x: hidden;
 }
 
+/*SIDEBAR MOBILE*/
+#toggle-menu {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    border-left: 2px solid #f39c12;
+    z-index: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 40px;
+    transition: right 0.35s ease;
+}
+
+#toggle-menu:checked ~ .sidebar {
+    right: 0;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-fechar:hover {
+    color: #f39c12;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 11px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.ativo {
+    background-color: #f39c12;
+    color: black;
+}
+
+.hamburguer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.hamburguer:hover {
+    color: #f39c12;
+}
+
+.menu{
+    display: none;
+}
+
+/*CABECALHO*/
 .header{
     width: 100%;
     padding: 20px 15px;
     background-color: black;
     border-bottom: 2px solid #f39c12;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
 }
@@ -116,7 +203,7 @@ body{
     gap: 25px;
 }
 
-/* ETAPAS */
+/*ETAPAS*/
 .etapa{
     display: flex;
     align-items: center;
@@ -181,7 +268,7 @@ body{
     line-height: 1.5;
 }
 
-/* TEMPO E VALOR */
+/*TEMPO E VALOR*/
 .info-servico span{
     color: #f39c12;
     font-weight: bold;
@@ -208,7 +295,7 @@ body{
     gap: 20px;
 }
 
-/* INPUTS E TEXTAREA */
+/*INPUTS E TEXTAREA*/
 .inputs input,.formulario input,.formulario textarea{
     width: 100%;
     padding: 15px;
@@ -251,10 +338,33 @@ footer{
     width: 100%;
     margin-top: 60px;
     padding: 35px 20px;
-    background: rgba(0, 0, 0, 0.831);
+    background-color: rgba(0, 0, 0, 0.127);
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+
+/*ENTRAR PARA AGENDAR*/
+.box-agendamento p{
+    text-align: center;
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 1px;
+}
+
+.entrar{
+    text-align: center;
+    margin-top: 0;
+}
+.entrar a{
+    text-decoration: none;
+    color: white;
+}
+
+.entrar a:hover{
+    text-decoration: underline;
+    color: #f39c12;
 }
 
 /* TABLET */
@@ -266,6 +376,13 @@ footer{
 
     .menu ul{
         flex-direction: row;
+    }
+
+    .menu li a{
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
     .container-logo h1{
@@ -309,10 +426,22 @@ footer{
     .info-servico h4{
         font-size: 1.5rem;
     }
+
+    .hamburguer{
+        display: none;
+    }
+
+    .sidebar{
+        display: none !important;
+    }
+
+    .menu{
+        display: block;
+    }
 }
 
 /* DESKTOP */
-@media (min-width: 1200px){
+@media (min-width: 1024px){
     .box-agendamento{
         max-width: 1200px;
         margin: auto;

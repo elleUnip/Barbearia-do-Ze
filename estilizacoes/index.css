@@ -1,5 +1,4 @@
-/* PARTE DA GRAZIELLE */
-
+/* PARTE GRAZIELLE */
 *{
     padding: 0;
     margin: 0;
@@ -11,7 +10,7 @@ html{
 }
 
 body{
-    background-image: url("../img/fundo_ia.png");
+    background: linear-gradient(135deg, #080808 0%, #141414 50%, #080808 100%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,13 +19,100 @@ body{
     overflow-x: hidden;
 }
 
+/*SIDEBAR MOBILE*/
+#toggle-menu {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    border-left: 2px solid #f39c12;
+    z-index: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 40px;
+    transition: right 0.35s ease;
+}
+
+#toggle-menu:checked ~ .sidebar {
+    right: 0;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-fechar:hover {
+    color: #f39c12;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 11px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.ativo {
+    background-color: #f39c12;
+    color: black;
+}
+
+.hamburguer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.hamburguer:hover {
+    color: #f39c12;
+}
+
+.menu{
+    display: none;
+}
+
+/*CABECALHO*/
 .header{
     width: 100%;
     padding: 20px 15px;
     background-color: black;
     border-bottom: 2px solid #f39c12;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
 }
@@ -46,6 +132,7 @@ body{
     font-size: 1.5rem;
 }
 
+/*MENU*/
 .menu ul{
     list-style: none;
     padding-left: 0;
@@ -99,15 +186,17 @@ body{
     border-radius: 50%;
 }
 
+/*CAIXA DO CENTRO*/
 .box-principal{
     width: 100%;
     max-width: 1000px;
     min-height: 420px;
-    background-image: url("../img/Background_IA.png");
+    background-image: url("../img/ChatGPT\ Image\ 15\ de\ mai.\ de\ 2026\,\ 16_33_43.png");
+    background-position: 70% center;
     backdrop-filter: blur(15px);
     border: 1px solid rgba(243,156,18,0.3);
     border-radius: 24px;
-    box-shadow: 0 0 30px rgba(243,156,18,0.12), 0 0 80px rgba(0,0,0,0.7);
+    box-shadow: 0 0 30px rgba(255, 182, 64, 0.12), 0 0 80px rgba(0,0,0,0.7);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -160,6 +249,7 @@ body{
 .servicos{
     width: 100%;
     padding: 80px 15px;
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.75), transparent);
 }
 
 .servicos h2{
@@ -175,6 +265,7 @@ body{
     font-family: 'Rye', serif;
 }
 
+/*CARROSSEL SERVICOS*/
 .carrossel-servicos{
     display: flex;
     gap: 20px;
@@ -244,6 +335,7 @@ body{
 .avaliacoes{
     width: 100%;
     padding: 80px 15px;
+    background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75), transparent);
 }
 
 .avaliacoes h2{
@@ -313,7 +405,7 @@ footer{
     width: 100%;
     margin-top: 60px;
     padding: 35px 20px;
-    background: rgba(0, 0, 0, 0.831);
+    background-color: rgba(0, 0, 0, 0.127);
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -321,6 +413,7 @@ footer{
 
 /* TABLET */
 @media (min-width: 768px){
+
     .header{
         flex-direction: row;
         justify-content: space-around;
@@ -328,6 +421,13 @@ footer{
 
     .menu ul{
         flex-direction: row;
+    }
+
+    .menu li a{
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
     .container-logo h1{
@@ -341,10 +441,23 @@ footer{
     .card-servico,.card-avaliacao{
         flex: 0 0 320px;
     }
+
+    .hamburguer{
+        display: none;
+    }
+
+    .sidebar{
+        display: none !important;
+    }
+
+    .menu{
+        display: block;
+    }
 }
 
 /* DESKTOP */
 @media (min-width: 1024px){
+
     .hero h1{
         font-size: 4rem;
     }
